@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import {connect} from 'react-redux';
  
  function Cointainer(props) {
    return (
@@ -9,5 +10,12 @@ import React from 'react'
      </div>
    )
  }
- export default Cointainer;
+ function mapStatetoProps(state){
+  console.log('mapStatetoProps', state);
+  return{
+    count: state.count
+  }
+ }
+
+ export default  connect(mapStatetoProps)(Cointainer);
  
